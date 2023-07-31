@@ -1,0 +1,105 @@
+// tamaños de pantalla
+$ancho-pantalla-pequena: 600px;
+$ancho-pantalla-mediana: 1200px;
+$ancho-pantalla-grande: 1500px;
+// colores
+$backgroundBox: #c0d8d8;
+
+body {
+  background-color: #87b5b5 !important;
+}
+
+.App {
+  justify-items: center;
+}
+
+#toolbar {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  background-color: #4aa3a3;
+  padding: 0.3rem;
+  border: 1px solid #1d2f2f;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  box-shadow: 1px 1px 10px 2px #3a5f5f;
+  font-size: 1.1rem;
+  font-weight: bolder;
+  color: black;
+  border-bottom: none;
+  svg {
+    cursor: pointer;
+  }
+  svg:hover {
+    color: aquamarine;
+  }
+}
+
+#code-box {
+  width: fit-content;
+  #editor {
+    display: grid;
+    border: 1px solid #1d2f2f;
+    box-shadow: 1px 1px 10px 2px #3a5f5f;
+    background-color: $backgroundBox;
+    min-height: 200px;
+    resize: vertical;
+    outline: none;
+    padding-left: 5px;
+    padding-top: 5px;
+    font-size: 0.875rem;
+  }
+}
+
+#render-box {
+  width: fit-content;
+  #preview {
+    padding: 0 1rem;
+    position: relative;
+    border: 1px solid #1d2f2f;
+    box-shadow: 1px 1px 10px 2px #3a5f5f;
+    background-color: $backgroundBox;
+    width: 90vw;
+    min-height: 200px;
+    max-width: 800px;
+    min-height: 200px;
+    overflow-wrap: break-word;
+    img {
+      display: block;
+      max-width: 90%;
+      margin: 2rem auto;
+    }
+  }
+}
+
+@media screen and (max-width: $ancho-pantalla-pequena) {
+  #editor,
+  #editor > #toolbar {
+    width: 80vw;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: $ancho-pantalla-pequena) and (max-width: $ancho-pantalla-mediana) {
+  #editor,
+  #editor > #toolbar {
+    width: 60vw;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: $ancho-pantalla-mediana) and (max-width: $ancho-pantalla-grande) {
+  #editor,
+  #editor > #toolbar {
+    width: 40vw;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: $ancho-pantalla-grande) {
+  #editor,
+  #editor > #toolbar {
+    width: 30vw;
+    margin: 0 auto;
+  }
+}
